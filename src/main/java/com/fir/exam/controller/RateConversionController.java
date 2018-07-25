@@ -30,11 +30,11 @@ public class RateConversionController {
             10	CNY	AUD	0.19 */
     @RequestMapping(value = "/convert/{from}/{to}", method = RequestMethod.GET)
     @ResponseBody
-    public Convert rateConversion(@PathVariable("from") String from, @PathVariable("to") String to, @RequestParam("amount") String amount) {
+    public Convert rateConversion(@PathVariable("from") String from, @PathVariable("to") String to, @RequestParam(value="amount",required=false) String amount) {
 
         Convert convert = new Convert();
 
-        if (from != null && to != null) {
+        if (from != null && to != null && amount!=null) {
             // 获取对应汇率
             Rate r = new Rate();
             r.setFrom(from);
