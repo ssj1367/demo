@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fir.exam.mapper.ConvertMapper">
+    <select id="insertConvert" parameterType="com.fir.exam.bean.Convert">
+        INSERT INTO `convert`
+        (amount,rate,`convert`.`from`,`convert`.`to`,rate_id)
+        VALUES (#{amount},#{rate},#{from},#{to},#{rateId})
+    </select>
+</mapper>

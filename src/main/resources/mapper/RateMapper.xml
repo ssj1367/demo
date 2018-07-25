@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fir.exam.mapper.RateMapper">
+    <select id="selectRate"  resultType="com.fir.exam.bean.Rate">
+        SELECT id,rate,status
+        FROM rate
+        WHERE
+        rate.from = #{from} AND rate.to = #{to}
+    </select>
+</mapper>
